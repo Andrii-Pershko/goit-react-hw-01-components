@@ -1,10 +1,16 @@
 import { Profile } from "./Profile/Profile";
+import { Statistics } from "components/Statistics/Statistics";
+
 import user from "virtual-back-end/user.json";
+import data from "virtual-back-end/data.json"
+
+
 
 export const App = () => {
-  const { avatar,stats,username, tag, location,  } = user;
+  const { avatar, stats, username, tag, location, } = user;
 
   return (
+    
     <>
       <Profile
         username={username}
@@ -14,6 +20,10 @@ export const App = () => {
         location={location}
         likes={stats.likes}
         views={stats.views}></Profile>
+      
+      <Statistics title="Upload stats" stats={data} />
+      <Statistics stats={data} />
+
     </>
   );
 };
