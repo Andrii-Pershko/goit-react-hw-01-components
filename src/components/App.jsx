@@ -1,16 +1,15 @@
 import { Profile } from "./Profile/Profile";
-import { Statistics } from "components/Statistics/Statistics";
+import { Statistics } from "./Statistics/Statistics";
+import { FriendsListMarkup } from "./FriendsList/FriendsList"
 
 import user from "virtual-back-end/user.json";
-import data from "virtual-back-end/data.json"
-
-
+import data from "virtual-back-end/data.json";
+import friendsList from "virtual-back-end/friends.json";
 
 export const App = () => {
   const { avatar, stats, username, tag, location, } = user;
 
-  return (
-    
+    return (
     <>
       <Profile
         username={username}
@@ -24,6 +23,7 @@ export const App = () => {
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
 
+      <FriendsListMarkup friends={friendsList}></FriendsListMarkup>
     </>
   );
 };
