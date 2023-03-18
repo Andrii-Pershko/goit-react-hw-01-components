@@ -8,8 +8,7 @@ export const FriendsListMarkup = ({ friends }) => {
     return (
         <ul className={css["friend-list"]}>
             {friends.map(friend => {
-                const {id} = friend
-                return (<FriendsItems key={id} friend={friend}></FriendsItems>)
+                return (<FriendsItems key={friend.id} friend={friend}></FriendsItems>)
             })}
         </ul>
     )
@@ -18,6 +17,4 @@ export const FriendsListMarkup = ({ friends }) => {
 
 FriendsListMarkup.propTypes = {
     friends: PropTypes.arrayOf(PropTypes.object),
-    id: PropTypes.string,
-    
 }
